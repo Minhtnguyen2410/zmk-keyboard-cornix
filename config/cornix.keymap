@@ -40,8 +40,7 @@
 
 &lt { flavor = "hold-preferred"; };
 
-&mt {
-};
+&mt { flavor = "tap-preferred"; };
 
 / {
     // Activate ADJUST layer by pressing raise and lower
