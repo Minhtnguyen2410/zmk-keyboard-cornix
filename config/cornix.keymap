@@ -38,15 +38,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&lt {
-    flavor = "hold-preferred";
-    tapping-term-ms = <250>;
-};
+&lt { flavor = "hold-preferred"; };
 
-&mt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <250>;
-};
+&mt { flavor = "tap-preferred"; };
 
 / {
     // Activate ADJUST layer by pressing raise and lower
@@ -64,6 +58,16 @@
          * Tap-Tap-Hold: Repeat T
          * Hold: LSHIFT
          */
+
+        dlt: dlt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DLT";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <350>;
+            flavor = "tap-preferred";
+        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -100,9 +104,9 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESCAPE      &lt 3 Q       &kp W         &kp E             &kp R           &lt 6 T                              &kp Y        &kp U      &kp I  &kp O     &kp DELETE  &kp BACKSPACE
+&kp ESCAPE      &lt 3 Q       &kp W         &kp E             &kp R           &dlt 6 T                             &kp Y        &kp U      &kp I  &kp O     &kp DELETE  &kp BACKSPACE
 &kp TAB         &lt 2 A       &mt LCTRL S   &mt LEFT_SHIFT D  &mt LEFT_ALT F  &mt LCTRL G                          &kp H        &kp J      &kp K  &kp L     &kp P       &kp ENTER
-&kp LEFT_SHIFT  &lt 4 Z       &lt 7 X       &kp C             &kp V           &mkp MB3         &trans  &kt K_MUTE  &kp COMMA    &kp B      &kp N  &kp M     &kp UP      &kp RIGHT_SHIFT
+&kp LEFT_SHIFT  &lt 4 Z       &dlt 7 X      &kp C             &kp V           &mkp MB3         &trans  &kt K_MUTE  &kp COMMA    &kp B      &kp N  &kp M     &kp UP      &kp RIGHT_SHIFT
 &kp LCTRL       &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_SHIFT    &lt 1 SPACE     &lt 5 BACKSPACE                      &lt 2 ENTER  &kp SPACE  &mo 3  &kp LEFT  &kp DOWN    &kp RIGHT
             >;
 
