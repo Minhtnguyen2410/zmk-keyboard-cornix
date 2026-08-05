@@ -71,7 +71,31 @@
         cb_ltm {
             bindings = <&kp ESC>;
             key-positions = <4 3>;
-            layers = <0 1>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;
+        };
+
+        cb_tab {
+            bindings = <&kp TAB>;
+            key-positions = <27 28>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;
+        };
+    };
+
+    macros {
+        ExcelIndentLeft: ExcelIndentLeft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp N5>;
+            label = "EXCELINDENTLEFT";
+        };
+
+        ExcelIndentRight: ExcelIndentRight {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp NUMBER_6>;
+            label = "EXCELINDENTRIGHT";
         };
     };
 
@@ -109,10 +133,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&trans  &kp N0   &kp N7  &kp N8  &kp N9  &kp BSPC                  &kp LEFT_PARENTHESIS   &kp AMPERSAND  &kp PLUS          &kp MINUS          &kp COLON       &trans
-&trans  &mo 2    &kp N4  &kp N5  &kp N6  &kp RET                   &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp STAR          &kp FSLH           &kp UNDERSCORE  &trans
-&trans  &kp DOT  &kp N1  &kp N2  &kp N3  &kp N0    &trans  &trans  &trans                 &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &trans          &trans
-&trans  &trans   &trans  &trans  &trans  &trans                    &trans                 &trans         &trans            &trans             &trans          &trans
+&trans  &kp N0   &kp N7  &kp N8  &kp N9  &kp BSPC                    &kp LEFT_PARENTHESIS   &kp AMPERSAND  &kp PLUS          &kp MINUS          &kp COLON       &trans
+&trans  &mo 2    &kp N4  &kp N5  &kp N6  &kp RET                     &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp STAR          &kp FSLH           &kp UNDERSCORE  &trans
+&trans  &kp DOT  &kp N1  &kp N2  &kp N3  &kp DELETE  &trans  &trans  &trans                 &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &trans          &trans
+&trans  &trans   &trans  &trans  &trans  &trans                      &trans                 &trans         &trans            &trans             &trans          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -170,10 +194,10 @@
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
             bindings = <
-&trans  &kp GRAVE  &kp LBKT   &kp RBKT  &kp BSLH  &kp BSPC                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &kp SEMI   &kp SQT   &trans    &kp RET                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &kp COMMA  &kp DOT   &kp FSLH  &kp DEL   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans    &trans    &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE  &kp LBKT   &kp RBKT  &kp BSLH          &kp BSPC                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &kp SEMI   &kp SQT   &ExcelIndentLeft  &ExcelIndentRight                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &kp COMMA  &kp DOT   &kp FSLH          &kp DEL            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans    &trans            &trans                             &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
