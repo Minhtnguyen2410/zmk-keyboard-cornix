@@ -113,10 +113,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC    &lt 3 Q   &mt LS(LEFT_CONTROL) W  &kp E             &kp R           &lt 6 T                                &kp Y      &kp U        &kp I            &kp O     &kp DEL   &kp BSPC
-&kp TAB    &lt 2 A   &mt LEFT_CONTROL S      &mt LEFT_SHIFT D  &mt LEFT_ALT F  &mt LEFT_CONTROL G                     &kp H      &kp J        &kp K            &kp L     &kp P     &kp RET
-&kp LSHFT  &lt 4 Z   &kp X                   &kp C             &kp V           &mkp MB3            &sys_reset  &none  &kp COMMA  &kp B        &kp N            &kp M     &kp UP    &kp BACKSPACE
-&kp LCTRL  &kp LGUI  &kp LALT                &kp LSHFT         &lt 1 SPACE     &mo 5                                  &mo 2      &lt 3 SPACE  &kp RIGHT_SHIFT  &kp LEFT  &kp DOWN  &kp RIGHT
+&kp ESC    &lt 3 Q   &mt LS(LEFT_CONTROL) W  &kp E             &kp R           &lt 6 T                                &kp Y        &kp U        &kp I            &kp O     &kp DEL   &kp BSPC
+&kp TAB    &lt 2 A   &mt LEFT_CONTROL S      &mt LEFT_SHIFT D  &mt LEFT_ALT F  &mt LEFT_CONTROL G                     &kp H        &kp J        &kp K            &kp L     &kp P     &kp RET
+&kp LSHFT  &lt 4 Z   &kp X                   &kp C             &kp V           &mkp MB3            &sys_reset  &none  &kp COMMA    &kp B        &kp N            &kp M     &kp UP    &kp BACKSPACE
+&kp LCTRL  &kp LGUI  &kp LALT                &kp LSHFT         &lt 1 SPACE     &mo 5                                  &lt 2 ENTER  &lt 3 SPACE  &kp RIGHT_SHIFT  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -133,8 +133,8 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&trans  &kp N0   &kp N7  &kp N8  &kp N9  &kp BSPC                    &kp LEFT_PARENTHESIS   &kp AMPERSAND  &kp PLUS          &kp MINUS          &kp COLON       &trans
-&trans  &mo 2    &kp N4  &kp N5  &kp N6  &kp RET                     &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp STAR          &kp FSLH           &kp UNDERSCORE  &trans
+&trans  &kp N0   &kp N7  &kp N8  &kp N9  &kp BSPC                    &kp RIGHT_PARENTHESIS  &kp AMPERSAND  &kp PLUS          &kp MINUS          &kp COLON       &trans
+&trans  &mo 2    &kp N4  &kp N5  &kp N6  &kp RET                     &kp LEFT_PARENTHESIS   &kp EQUAL      &kp STAR          &kp FSLH           &kp UNDERSCORE  &trans
 &trans  &kp DOT  &kp N1  &kp N2  &kp N3  &kp DELETE  &trans  &trans  &trans                 &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &trans          &trans
 &trans  &trans   &trans  &trans  &trans  &trans                      &trans                 &trans         &trans            &trans             &trans          &trans
             >;
@@ -174,10 +174,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &trans      &kp PG_UP  &kp UP    &kp PG_DN  &kp HOME                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp INSERT  &kp LEFT   &kp DOWN  &kp RIGHT  &kp END                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans      &trans     &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans      &trans     &trans    &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans      &kp PG_UP  &kp UP    &kp PG_DN  &kp HOME                  &kp HOME  &kp PAGE_DOWN  &kp UP    &kp PAGE_UP  &trans      &trans
+&trans  &kp INSERT  &kp LEFT   &kp DOWN  &kp RIGHT  &kp END                   &kp END   &kp LEFT       &kp DOWN  &kp RIGHT    &kp INSERT  &trans
+&trans  &trans      &trans     &trans    &trans     &trans    &trans  &trans  &trans    &trans         &trans    &trans       &trans      &trans
+&trans  &trans      &trans     &trans    &trans     &trans                    &trans    &trans         &trans    &trans       &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
